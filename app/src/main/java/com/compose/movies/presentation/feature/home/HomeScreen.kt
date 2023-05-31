@@ -10,6 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.compose.movies.data.repositories.movies
 import com.compose.movies.domain.model.Movie
 import com.compose.movies.domain.model.MovieItem
@@ -17,7 +19,7 @@ import com.compose.movies.presentation.ui.MyMoviesTheme
 import com.compose.movies.presentation.ui.component.TopAppBar
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -25,18 +27,18 @@ fun HomeScreen() {
     ) {
         TopAppBar(title = "Home")
 
-        MovieList(movies = movies)
+        MovieList(movies = movies, navController)
     }
 }
 
 @Composable
-fun MovieList(movies: List<Movie>) {
+fun MovieList(movies: List<Movie>, navController: NavHostController) {
     LazyVerticalGrid(
         columns = GridCells.Adaptive(minSize = 128.dp)
     ) {
         items(count = movies.size) { index ->
             val movie = movies[index]
-            MovieItem(movie = movie)
+            MovieItem(movie = movie, navController)
         }
     }
 }
@@ -45,7 +47,7 @@ fun MovieList(movies: List<Movie>) {
 @Composable
 fun HomeScreenPreview() {
     MyMoviesTheme(darkTheme = false) {
-        HomeScreen()
+        HomeScreen(rememberNavController())
     }
 }
 
@@ -53,6 +55,6 @@ fun HomeScreenPreview() {
 @Composable
 fun DarkHomeScreenPreview() {
     MyMoviesTheme(darkTheme = true) {
-        HomeScreen()
+        HomeScreen(rememberNavController())
     }
 }

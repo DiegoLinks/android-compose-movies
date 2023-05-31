@@ -62,4 +62,7 @@ dependencies {
 
     //Glide
     implementation "com.github.bumptech.glide:compose:1.0.0-alpha.3"
+
+    //Compose navigation
+    implementation "androidx.hilt:hilt-navigation-compose:1.1.0-alpha01"
 }

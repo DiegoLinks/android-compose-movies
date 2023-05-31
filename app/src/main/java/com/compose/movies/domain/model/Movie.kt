@@ -5,5 +5,6 @@ data class Movie(
     val title: String,
     val coverImage: String,
     val releaseYear: Int,
-    val genre: String
+    val genre: ArrayList<String>,
+    val synopsis: String
 )
