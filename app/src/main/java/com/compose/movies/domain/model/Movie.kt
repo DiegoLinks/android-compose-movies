@@ -1,4 +1,4 @@
-package com.compose.movies.presentation.domain.model
+package com.compose.movies.domain.model
 
 data class Movie(
     val id: Int,

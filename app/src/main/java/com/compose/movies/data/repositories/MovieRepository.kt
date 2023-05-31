@@ -1,6 +1,6 @@
-package com.compose.movies.presentation.data.repositories
+package com.compose.movies.data.repositories
 
-import com.compose.movies.presentation.domain.model.Movie
+import com.compose.movies.domain.model.Movie
 
 val movies = listOf(
     Movie(

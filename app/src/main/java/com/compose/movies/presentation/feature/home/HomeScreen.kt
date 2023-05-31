@@ -1,4 +1,4 @@
-package com.compose.movies.presentation.feature.view
+package com.compose.movies.presentation.feature.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -10,9 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.compose.movies.presentation.data.repositories.movies
-import com.compose.movies.presentation.domain.model.Movie
-import com.compose.movies.presentation.domain.model.MovieItem
+import com.compose.movies.data.repositories.movies
+import com.compose.movies.domain.model.Movie
+import com.compose.movies.domain.model.MovieItem
 import com.compose.movies.presentation.ui.MyMoviesTheme
 import com.compose.movies.presentation.ui.component.TopAppBar
 

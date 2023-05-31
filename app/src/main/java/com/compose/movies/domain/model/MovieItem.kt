@@ -1,4 +1,4 @@
-package com.compose.movies.presentation.domain.model
+package com.compose.movies.domain.model
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
