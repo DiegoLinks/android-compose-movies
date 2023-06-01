@@ -14,8 +14,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.compose.movies.data.repositories.movies
 import com.compose.movies.domain.model.Movie
-import com.compose.movies.domain.model.MovieItem
-import com.compose.movies.presentation.ui.MyMoviesTheme
+import com.compose.movies.presentation.ui.theme.MyMoviesTheme
 import com.compose.movies.presentation.ui.component.TopAppBar
 
 @Composable

@@ -1,9 +1,10 @@
-package com.compose.movies.domain.model
+package com.compose.movies.presentation.feature.home
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -14,7 +15,8 @@ import androidx.navigation.compose.rememberNavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.compose.movies.data.repositories.movies
-import com.compose.movies.presentation.ui.MyMoviesTheme
+import com.compose.movies.domain.model.Movie
+import com.compose.movies.presentation.ui.theme.MyMoviesTheme
 import com.compose.movies.presentation.utils.Dimens.spacingMedium
 
 @OptIn(ExperimentalGlideComposeApi::class)
@@ -29,12 +31,16 @@ fun MovieItem(movie: Movie, navController: NavHostController) {
     ) {
         GlideImage(
             model = movie.coverImage,
-            contentDescription = null,
+            contentDescription = null,//todo add some content description
             modifier = Modifier.size(width = 192.dp, height = 288.dp)
         )
-        Text(text = movie.title)
-        Text(text = movie.releaseYear.toString())
-        Text(text = movie.genre[0])
+        Text(
+            text = movie.title,
+            style = MaterialTheme.typography.labelLarge,
+            color = MaterialTheme.colorScheme.onBackground
+        )
+        Text(text = movie.releaseYear.toString(), color = MaterialTheme.colorScheme.onBackground)
+        Text(text = movie.genre[0], color = MaterialTheme.colorScheme.onBackground)
     }
 }
 

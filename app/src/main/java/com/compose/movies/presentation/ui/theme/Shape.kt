@@ -1,4 +1,4 @@
-package com.compose.movies.presentation.ui
+package com.compose.movies.presentation.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes
