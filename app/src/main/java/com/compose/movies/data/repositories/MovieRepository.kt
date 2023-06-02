@@ -45,7 +45,7 @@ val movies = listOf(
     ),
     Movie(
         id = 5,
-        title = "Efieto Borboleta",
+        title = "Efeito Borboleta",
         coverImage = "https://upload.wikimedia.org/wikipedia/pt/4/43/Butterflyeffect_poster.jpg",
         releaseYear = 2004,
         genre = arrayListOf("Thriller", "Ficção científica"),
