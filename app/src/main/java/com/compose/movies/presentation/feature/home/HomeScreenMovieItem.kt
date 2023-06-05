@@ -31,7 +31,7 @@ fun MovieItem(movie: Movie, navController: NavHostController) {
         modifier = Modifier
             .background(MaterialTheme.colorScheme.background)
             .clickable {
-                navController.navigate("detail/${movie.title}/${movie.synopsis}")
+                navController.navigate("detail/${movie.id}")
             }
     ) {
         Column(modifier = Modifier.padding(spacingMedium)) {
