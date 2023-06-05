@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="movie_detail_title" formatted="true">Detalhes do filme</string>
+    <string name="year_label" formatted="true">Ano: %s</string>
+    <string name="genre_label" formatted="true">Gênero: %s</string>
+    <string name="director_label" formatted="true">Diretor: %s</string>
+    <string name="country_label" formatted="true">Pais: %s</string>
 </resources>
