@@ -1,4 +1,4 @@
-package com.compose.movies.data.repositories
+package com.compose.movies.data.repository
 
 import com.compose.movies.domain.model.Country
 import com.compose.movies.domain.model.Movie

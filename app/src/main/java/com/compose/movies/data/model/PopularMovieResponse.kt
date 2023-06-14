@@ -1,4 +1,4 @@
-package com.compose.movies.domain.model
+package com.compose.movies.data.model
 
 import kotlinx.serialization.SerialName
 
