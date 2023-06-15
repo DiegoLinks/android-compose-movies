@@ -1,9 +1,8 @@
 package com.compose.movies.data.repository
 
-import com.compose.movies.data.model.PopularMovieResponse
-import retrofit2.Response
+import com.compose.movies.domain.model.Movie
 
 interface MovieRepository {
-    suspend fun getPopularMovies(apiKey: String): Response<PopularMovieResponse>
+    suspend fun getPopularMovies(apiKey: String): List<Movie>?
 }
 
