@@ -18,7 +18,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.compose.movies.data.repositories.movies
+import com.compose.movies.data.repository.movies
 import com.compose.movies.domain.model.Movie
 import com.compose.movies.presentation.ui.theme.MyMoviesTheme
 import com.compose.movies.presentation.utils.Dimens.fontXLarge
@@ -31,7 +31,8 @@ fun MovieItem(movie: Movie, navController: NavHostController) {
         modifier = Modifier
             .background(MaterialTheme.colorScheme.background)
             .clickable {
-                navController.navigate("detail/${movie.id}")
+                //todo add detail flow via API
+                //navController.navigate("detail/${movie.id}")
             }
     ) {
         Column(modifier = Modifier.padding(spacingMedium)) {
@@ -53,11 +54,12 @@ fun MovieItem(movie: Movie, navController: NavHostController) {
             )
 
             Text(
-                text = movie.releaseYear.toString(),
+                text = movie.releaseYear,
                 color = MaterialTheme.colorScheme.onBackground
             )
 
-            Text(text = movie.genre[0], color = MaterialTheme.colorScheme.onBackground)
+            //todo add gender via API
+            //Text(text = movie.genre[0], color = MaterialTheme.colorScheme.onBackground)
         }
     }
 }

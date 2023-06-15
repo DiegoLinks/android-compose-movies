@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -65,4 +67,21 @@ dependencies {
 
     //Compose navigation
     implementation "androidx.hilt:hilt-navigation-compose:1.1.0-alpha01"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    //OkHttp Logging Interceptor
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+
+    //Kotlin Serialization
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0'
+
+    //Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    //Compose LiveData
+    implementation 'androidx.compose.runtime:runtime-livedata:1.5.0-beta02'
 }

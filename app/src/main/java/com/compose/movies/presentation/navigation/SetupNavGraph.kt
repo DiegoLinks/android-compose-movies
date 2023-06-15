@@ -1,6 +1,7 @@
 package com.compose.movies.presentation.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -8,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.compose.movies.presentation.feature.detail.MovieDetailRoute
 import com.compose.movies.presentation.feature.home.HomeScreen
+import com.compose.movies.presentation.feature.home.HomeViewModel
 import com.compose.movies.presentation.navigation.Routes.DETAIL_ROUTE
 
 @Composable
@@ -17,7 +19,8 @@ fun SetupNavGraph(navController: NavHostController) {
         startDestination = Screens.HomeScreen.route
     ) {
         composable(route = Screens.HomeScreen.route) {
-            HomeScreen(navController)
+            val viewModel = hiltViewModel<HomeViewModel>()
+            HomeScreen(navController, viewModel)
         }
 
         composable(
