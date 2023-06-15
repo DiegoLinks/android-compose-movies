@@ -31,7 +31,8 @@ fun MovieItem(movie: Movie, navController: NavHostController) {
         modifier = Modifier
             .background(MaterialTheme.colorScheme.background)
             .clickable {
-                navController.navigate("detail/${movie.id}")
+                //todo add detail flow via API
+                //navController.navigate("detail/${movie.id}")
             }
     ) {
         Column(modifier = Modifier.padding(spacingMedium)) {
@@ -53,11 +54,12 @@ fun MovieItem(movie: Movie, navController: NavHostController) {
             )
 
             Text(
-                text = movie.releaseYear.toString(),
+                text = movie.releaseYear,
                 color = MaterialTheme.colorScheme.onBackground
             )
 
-            Text(text = movie.genre[0], color = MaterialTheme.colorScheme.onBackground)
+            //todo add gender via API
+            //Text(text = movie.genre[0], color = MaterialTheme.colorScheme.onBackground)
         }
     }
 }

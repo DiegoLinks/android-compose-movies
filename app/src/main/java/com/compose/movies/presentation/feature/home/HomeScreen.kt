@@ -8,18 +8,31 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.compose.movies.data.repository.movies
+import com.compose.movies.R
 import com.compose.movies.domain.model.Movie
 import com.compose.movies.presentation.ui.theme.MyMoviesTheme
 import com.compose.movies.presentation.ui.component.TopAppBar
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel) {
+
+    val movies = viewModel.movies.observeAsState()
+
+    val apiKey = stringResource(id = R.string.api_key)
+
+    LaunchedEffect(key1 = Unit) {
+        viewModel.getMovieList(apiKey = apiKey)
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -27,7 +40,8 @@ fun HomeScreen(navController: NavHostController) {
     ) {
         TopAppBar(title = "Home")
 
-        MovieList(movies = movies, navController)
+        val movieList = movies.value ?: listOf()
+        MovieList(movies = movieList, navController)
     }
 }
 
@@ -59,7 +73,7 @@ fun MovieList(movies: List<Movie>, navController: NavHostController) {
 @Composable
 fun HomeScreenPreview() {
     MyMoviesTheme(darkTheme = false) {
-        HomeScreen(rememberNavController())
+        HomeScreen(rememberNavController(), viewModel = hiltViewModel())
     }
 }
 
@@ -67,6 +81,6 @@ fun HomeScreenPreview() {
 @Composable
 fun DarkHomeScreenPreview() {
     MyMoviesTheme(darkTheme = true) {
-        HomeScreen(rememberNavController())
+        HomeScreen(rememberNavController(), viewModel = hiltViewModel())
     }
 }
