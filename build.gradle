@@ -3,6 +3,7 @@ buildscript {
         compose_ui_version = '1.4.3'
         retrofit_version = '2.9.0'
         hilt_version = '2.44'
+        moshi_version = '1.14.0'
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
