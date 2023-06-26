@@ -4,7 +4,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.ResponseBody
 
-class ErrorResponseConvert {
+class ErrorResponseConverter {
     companion object {
         private fun createMoshi(): Moshi {
             return Moshi.Builder()
