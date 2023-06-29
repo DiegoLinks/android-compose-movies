@@ -5,4 +5,5 @@
     <string name="genre_label" formatted="true">Gênero: %s</string>
     <string name="director_label" formatted="true">Diretor: %s</string>
     <string name="country_label" formatted="true">Pais: %s</string>
+    <string name="label_close_button">Fechar</string>
 </resources>
