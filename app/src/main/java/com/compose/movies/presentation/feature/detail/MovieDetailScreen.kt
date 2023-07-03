@@ -30,7 +30,7 @@ import com.compose.movies.presentation.utils.Dimens.spacingXLarge
 fun MovieDetail(movie: Movie) {
     val title = stringResource(id = R.string.movie_detail_title)
     val yearLabel = stringResource(id = R.string.year_label, movie.releaseYear.toString())
-    val genreLabel = stringResource(id = R.string.genre_label, movie.genre[0])
+    val genreLabel = stringResource(id = R.string.genre_label, movie.genreList[0])
     val directorLabel = stringResource(id = R.string.director_label, movie.director)
     val countryLabel = stringResource(id = R.string.country_label, movie.country.name)
 
