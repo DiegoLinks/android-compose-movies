@@ -14,6 +14,7 @@ val movies = listOf(
         coverImage = "https://m.media-amazon.com/images/M/MV5BMzdlNGNiNTAtNDAyZC00NmQwLTg3ZTYtNDQ4MmNiYTc2ZmYzXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
         releaseYear = "2019",
         genre = arrayListOf("Ficção científica", "Suspense"),
+        voteAverage = 10.0,
         director = "Justin Benson e Aaron Moorhead",
         country = Country(
             "Estados Unidos",
@@ -27,6 +28,7 @@ val movies = listOf(
         coverImage = "https://upload.wikimedia.org/wikipedia/pt/4/44/GladiadorPoster.jpg",
         releaseYear = "2000",
         genre = arrayListOf("Aventura", "Ação"),
+        voteAverage = 10.0,
         director = "Ridley Scott",
         country = Country(
             "Estados Unidos",
@@ -40,6 +42,7 @@ val movies = listOf(
         coverImage = "https://pobreflix.org/wp-content/uploads/2020/06/s9SreIsoUwFVVIVGph6kDuahmwM-200x300.jpg",
         releaseYear = "2010",
         genre = arrayListOf("Mistério"),
+        voteAverage = 10.0,
         director = "Martin Scorsese",
         country = Country(
             "Estados Unidos",
@@ -53,6 +56,7 @@ val movies = listOf(
         coverImage = "https://media.fstatic.com/PyqUkh_2cnOq4DV-QLnOnaxDXt0=/322x478/smart/filters:format(webp)/media/movies/covers/2011/06/79a318ad4357944e02cf298b028488d4.jpg",
         releaseYear = "2009",
         genre = arrayListOf("Romance", "Comédia"),
+        voteAverage = 10.0,
         director = "Mark Webb",
         country = Country(
             "Estados Unidos",
@@ -66,6 +70,7 @@ val movies = listOf(
         coverImage = "https://br.web.img3.acsta.net/pictures/210/530/21053062_20131025204305591.jpg",
         releaseYear = "2013",
         genre = arrayListOf("Romance", "Fantasia"),
+        voteAverage = 10.0,
         director = "Richard Curtis",
         country = Country(
             "Reino Unido",
@@ -79,6 +84,7 @@ val movies = listOf(
         coverImage = "https://upload.wikimedia.org/wikipedia/pt/4/43/Butterflyeffect_poster.jpg",
         releaseYear = "2004",
         genre = arrayListOf("Thriller", "Ficção científica"),
+        voteAverage = 10.0,
         director = "Eric Bress e J. Mackye Gruber",
         country = Country(
             "Estados Unidos",
@@ -92,6 +98,7 @@ val movies = listOf(
         coverImage = "https://images.justwatch.com/poster/250515535/s592/o-preco-do-amanha",
         releaseYear = "2011",
         genre = arrayListOf("Ficção científica", "Ação"),
+        voteAverage = 10.0,
         director = "Andrew Niccol",
         country = Country(
             "Estados Unidos",
@@ -105,6 +112,7 @@ val movies = listOf(
         coverImage = "https://br.web.img3.acsta.net/pictures/22/10/20/16/25/1413867.jpg",
         releaseYear = "2022",
         genre = arrayListOf("Guerra", "Ação"),
+        voteAverage = 10.0,
         director = "Edward Berger",
         country = Country(
             "Alemanha",
@@ -118,6 +126,7 @@ val movies = listOf(
         coverImage = "https://seuladogeek.com.br/wp-content/uploads/2022/08/Filme-1917.jpg",
         releaseYear = "2020",
         genre = arrayListOf("Guerra", "Ação"),
+        voteAverage = 10.0,
         director = "Sam Mendes",
         country = Country(
             "Reino Unido",
@@ -131,6 +140,7 @@ val movies = listOf(
         coverImage = "https://upload.wikimedia.org/wikipedia/pt/1/10/CidadedeDeus.jpg",
         releaseYear = "2002",
         genre = arrayListOf("Crime", "Drama"),
+        voteAverage = 10.0,
         director = "Fernando Meirelles e Kátia Lund",
         country = Country(
             "Brasil",

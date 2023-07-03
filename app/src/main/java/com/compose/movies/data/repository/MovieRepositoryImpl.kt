@@ -37,6 +37,7 @@ class MovieRepositoryImpl @Inject constructor(
             coverImage = ImageUtils.getFullImageUrl(posterPath),
             releaseYear = MovieUtils.getReleaseYear(releaseDate),
             genre = arrayListOf(),
+            voteAverage = voteAverage,
             director = "",
             country = Country("", ""),
             synopsis = overview
