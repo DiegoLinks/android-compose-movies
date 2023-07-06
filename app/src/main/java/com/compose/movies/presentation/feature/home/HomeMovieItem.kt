@@ -12,12 +12,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
+import com.compose.movies.R
 import com.compose.movies.data.repository.movies
 import com.compose.movies.domain.model.Movie
 import com.compose.movies.presentation.ui.theme.MyMoviesTheme
@@ -54,12 +56,19 @@ fun MovieItem(movie: Movie, navController: NavHostController) {
             )
 
             Text(
+                text = movie.mainGenre,
+                color = MaterialTheme.colorScheme.onBackground
+            )
+
+            Text(
                 text = movie.releaseYear,
                 color = MaterialTheme.colorScheme.onBackground
             )
 
-            //todo add gender via API
-            //Text(text = movie.genre[0], color = MaterialTheme.colorScheme.onBackground)
+            Text(
+                text = stringResource(R.string.rating_label, movie.voteAverage),
+                color = MaterialTheme.colorScheme.onBackground
+            )
         }
     }
 }

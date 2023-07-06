@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name" translatable="false">My Movies</string>
+    <string name="app_name" translatable="false">MiMovies</string>
     <string name="movie_detail_title" formatted="true">Movie Details</string>
     <string name="year_label" formatted="true">Year: %s</string>
     <string name="genre_label" formatted="true">Genre: %s</string>
+    <string name="rating_label" formatted="true">Rating: %s</string>
     <string name="director_label" formatted="true">Director: %s</string>
     <string name="country_label" formatted="true">Country: %s</string>
     <string name="label_close_button">Close</string>
