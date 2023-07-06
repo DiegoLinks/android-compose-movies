@@ -52,7 +52,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel) {
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        TopAppBar(title = "Home")
+        TopAppBar(title = stringResource(R.string.app_name))
 
         val movieList = movies.value ?: listOf()
         MovieList(movies = movieList, navController)

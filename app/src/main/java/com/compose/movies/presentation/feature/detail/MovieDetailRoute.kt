@@ -10,6 +10,6 @@ fun MovieDetailRoute(movieId: Int) {
     if (movie == null) {
         //todo exception scenario
     } else {
-        MovieDetail(movie)
+        MovieDetailScreen(movie)
     }
 }

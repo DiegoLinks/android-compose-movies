@@ -27,7 +27,7 @@ import com.compose.movies.presentation.utils.Dimens.spacingXLarge
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun MovieDetail(movie: Movie) {
+fun MovieDetailScreen(movie: Movie) {
     val title = stringResource(id = R.string.movie_detail_title)
     val yearLabel = stringResource(id = R.string.year_label, movie.releaseYear.toString())
     val genreLabel = stringResource(id = R.string.genre_label, movie.genreList[0])
@@ -93,7 +93,7 @@ fun MovieDetail(movie: Movie) {
 @Composable
 fun MovieDetailScreenPreview() {
     MyMoviesTheme(darkTheme = false) {
-        MovieDetail(movies[0])
+        MovieDetailScreen(movies[0])
     }
 }
 
@@ -101,6 +101,6 @@ fun MovieDetailScreenPreview() {
 @Composable
 fun DarkMovieDetailScreenPreview() {
     MyMoviesTheme(darkTheme = true) {
-        MovieDetail(movies[0])
+        MovieDetailScreen(movies[0])
     }
 }
