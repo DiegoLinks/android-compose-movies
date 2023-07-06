@@ -73,9 +73,7 @@ fun MovieList(movies: List<Movie>, navController: NavHostController) {
         }
     }
 
-    LazyVerticalGrid(
-        columns = columns
-    ) {
+    LazyVerticalGrid(columns = columns) {
         items(count = movies.size) { index ->
             val movie = movies[index]
             MovieItem(movie = movie, navController)

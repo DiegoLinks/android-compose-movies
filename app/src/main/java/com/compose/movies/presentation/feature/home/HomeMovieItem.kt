@@ -1,13 +1,11 @@
 package com.compose.movies.presentation.feature.home
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -29,47 +27,46 @@ import com.compose.movies.presentation.utils.Dimens.spacingMedium
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun MovieItem(movie: Movie, navController: NavHostController) {
-    Surface(
+
+    Column(
         modifier = Modifier
-            .background(MaterialTheme.colorScheme.background)
+            .padding(spacingMedium)
             .clickable {
                 //todo add detail flow via API
                 //navController.navigate("detail/${movie.id}")
             }
     ) {
-        Column(modifier = Modifier.padding(spacingMedium)) {
-            GlideImage(
-                model = movie.coverImage,
-                contentDescription = null,//todo add some content description
-                modifier = Modifier
-                    .size(width = 232.dp, height = 262.dp)
-                    .fillMaxSize(),
-                contentScale = ContentScale.Crop
-            )
+        GlideImage(
+            model = movie.coverImage,
+            contentDescription = null,//todo add some content description
+            modifier = Modifier
+                .size(width = 232.dp, height = 262.dp)
+                .fillMaxSize(),
+            contentScale = ContentScale.Crop
+        )
 
-            Text(
-                text = movie.title,
-                modifier = Modifier.padding(top = spacingMedium),
-                style = MaterialTheme.typography.labelLarge,
-                fontSize = fontXLarge,
-                color = MaterialTheme.colorScheme.onBackground
-            )
+        Text(
+            text = movie.title,
+            modifier = Modifier.padding(top = spacingMedium),
+            style = MaterialTheme.typography.labelLarge,
+            fontSize = fontXLarge,
+            color = MaterialTheme.colorScheme.onBackground
+        )
 
-            Text(
-                text = movie.mainGenre,
-                color = MaterialTheme.colorScheme.onBackground
-            )
+        Text(
+            text = movie.mainGenre,
+            color = MaterialTheme.colorScheme.onBackground
+        )
 
-            Text(
-                text = movie.releaseYear,
-                color = MaterialTheme.colorScheme.onBackground
-            )
+        Text(
+            text = movie.releaseYear,
+            color = MaterialTheme.colorScheme.onBackground
+        )
 
-            Text(
-                text = stringResource(R.string.rating_label, movie.voteAverage),
-                color = MaterialTheme.colorScheme.onBackground
-            )
-        }
+        Text(
+            text = stringResource(R.string.rating_label, movie.voteAverage),
+            color = MaterialTheme.colorScheme.onBackground
+        )
     }
 }
 
