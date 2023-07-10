@@ -22,7 +22,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.compose.movies.R
-import com.compose.movies.domain.model.Movie
+import com.compose.movies.presentation.model.MovieUI
 import com.compose.movies.presentation.ui.component.BasicPopup
 import com.compose.movies.presentation.ui.theme.MyMoviesTheme
 import com.compose.movies.presentation.ui.component.TopAppBar
@@ -60,7 +60,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel) {
 }
 
 @Composable
-fun MovieList(movies: List<Movie>, navController: NavHostController) {
+fun MovieList(movies: List<MovieUI>, navController: NavHostController) {
 
     val configuration = LocalConfiguration.current
 

@@ -16,8 +16,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.compose.movies.R
-import com.compose.movies.data.repository.movies
-import com.compose.movies.domain.model.Movie
+import com.compose.movies.domain.repository.movies
+import com.compose.movies.presentation.model.MovieUI
 import com.compose.movies.presentation.ui.component.TopAppBar
 import com.compose.movies.presentation.ui.theme.MyMoviesTheme
 import com.compose.movies.presentation.utils.Dimens
@@ -27,10 +27,10 @@ import com.compose.movies.presentation.utils.Dimens.spacingXLarge
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun MovieDetailScreen(movie: Movie) {
+fun MovieDetailScreen(movie: MovieUI) {
     val title = stringResource(id = R.string.movie_detail_title)
-    val yearLabel = stringResource(id = R.string.year_label, movie.releaseYear.toString())
-    val genreLabel = stringResource(id = R.string.genre_label, movie.genreList[0])
+    val yearLabel = stringResource(id = R.string.year_label, movie.releaseYear)
+    val genreLabel = stringResource(id = R.string.genre_label, movie.mainGenre)
     val directorLabel = stringResource(id = R.string.director_label, movie.director)
     val countryLabel = stringResource(id = R.string.country_label, movie.country.name)
 
