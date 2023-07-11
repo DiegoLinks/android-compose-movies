@@ -9,8 +9,8 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -32,13 +32,13 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel) {
 
     val apiKey = stringResource(id = R.string.api_key)
 
-    val movies = viewModel.movies.observeAsState()
+    val movies = viewModel.movies.collectAsState()
     LaunchedEffect(key1 = Unit) {
         viewModel.getMovieList(apiKey = apiKey)
     }
 
     var showDialog by rememberSaveable { mutableStateOf(false) }
-    val errorMessage = viewModel.error.observeAsState()
+    val errorMessage = viewModel.error
     LaunchedEffect(errorMessage.value) {
         errorMessage.value?.let { showDialog = true }
     }
@@ -54,7 +54,7 @@ fun HomeScreen(navController: NavHostController, viewModel: HomeViewModel) {
     ) {
         TopAppBar(title = stringResource(R.string.app_name))
 
-        val movieList = movies.value ?: listOf()
+        val movieList = movies.value
         MovieList(movies = movieList, navController)
     }
 }

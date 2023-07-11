@@ -1,44 +1,45 @@
 package com.compose.movies.presentation.feature.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.compose.movies.data.remote.NetworkResult
-import com.compose.movies.data.repository.MovieRepository
-import com.compose.movies.domain.model.Movie
+import com.compose.movies.domain.usecase.GetPopularMoviesUseCase
+import com.compose.movies.presentation.model.MovieUI
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val repository: MovieRepository
+    private val useCase: GetPopularMoviesUseCase
 ) : ViewModel() {
+    private val _movies = MutableStateFlow<List<MovieUI>>(emptyList())
+    val movies: StateFlow<List<MovieUI>> = _movies
 
-    private val _movies = MutableLiveData<List<Movie>>()
-    val movies: LiveData<List<Movie>> = _movies
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> = _isLoading
 
-    private val _isLoading = MutableLiveData<Boolean>()
-    val isLoading: LiveData<Boolean> = _isLoading
-
-    private val _error = MutableLiveData<String>()
-    val error: LiveData<String> = _error
+    private val _error = MutableStateFlow<String?>(null)
+    val error: StateFlow<String?> = _error
 
     fun getMovieList(apiKey: String) {
-        viewModelScope.launch(Dispatchers.IO) {
-            when (val response = repository.getPopularMovies(apiKey)) {
-                is NetworkResult.Success -> {
-                    _movies.postValue(response.data)
-                    _isLoading.postValue(false)
-                }
-                is NetworkResult.Error -> {
-                    _error.postValue(response.message)
-                    _isLoading.postValue(false)
-                }
-                is NetworkResult.Loading -> {
-                    _isLoading.value = true
+        viewModelScope.launch {
+            _isLoading.value = true
+            useCase.getPopularMovies(apiKey).collect { result ->
+                when (result) {
+                    is NetworkResult.Success -> {
+                        _movies.value = result.data ?: emptyList()
+                        _isLoading.value = false
+                    }
+                    is NetworkResult.Error -> {
+                        _error.value = result.message
+                        _isLoading.value = false
+                    }
+                    is NetworkResult.Loading -> {
+                        _isLoading.value = true
+                    }
                 }
             }
         }
