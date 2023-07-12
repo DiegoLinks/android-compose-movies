@@ -22,7 +22,7 @@ fun Movie.toMovieUI(): MovieUI {
         title = title,
         coverImage = ImageUtils.getFullImageUrl(coverImage),
         releaseYear = MovieUtils.getReleaseYear(releaseYear),
-        mainGenre = MovieUtils.getMainMovieGender(genreList),
+        mainGenre = MovieUtils.getMainMovieGenderId(genreList),
         genreList = arrayListOf(),
         voteAverage = voteAverage,
         director = "",

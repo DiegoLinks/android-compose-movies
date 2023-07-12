@@ -8,7 +8,7 @@ data class MovieUI(
     val coverImage: String?,
     val releaseYear: String,
     val genreList: ArrayList<String>?,
-    val mainGenre: String,
+    val mainGenre: Int,
     val voteAverage: Double,
     val director: String,
     val country: Country,
