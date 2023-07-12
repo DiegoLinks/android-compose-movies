@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -23,10 +24,13 @@ import com.compose.movies.presentation.model.MovieUI
 import com.compose.movies.presentation.ui.theme.MyMoviesTheme
 import com.compose.movies.presentation.utils.Dimens.fontXLarge
 import com.compose.movies.presentation.utils.Dimens.spacingMedium
+import com.compose.movies.presentation.utils.MovieUtils.getMainMovieGender
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun MovieItem(movie: MovieUI, navController: NavHostController) {
+
+    val context = LocalContext.current
 
     Column(
         modifier = Modifier
@@ -54,7 +58,7 @@ fun MovieItem(movie: MovieUI, navController: NavHostController) {
         )
 
         Text(
-            text = movie.mainGenre,
+            text = getMainMovieGender(movie.mainGenre, context),
             color = MaterialTheme.colorScheme.onBackground
         )
 
