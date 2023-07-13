@@ -59,7 +59,7 @@ fun MovieItem(movie: MovieUI, navController: NavHostController) {
 
         Text(
             text = getMainMovieGender(movie.mainGenre, context),
-            color = MaterialTheme.colorScheme.onBackground
+            color = MaterialTheme.colorScheme.onTertiaryContainer
         )
 
         Text(
@@ -69,7 +69,7 @@ fun MovieItem(movie: MovieUI, navController: NavHostController) {
 
         Text(
             text = stringResource(R.string.rating_label, movie.voteAverage),
-            color = MaterialTheme.colorScheme.onBackground
+            color = MaterialTheme.colorScheme.onSecondaryContainer
         )
     }
 }

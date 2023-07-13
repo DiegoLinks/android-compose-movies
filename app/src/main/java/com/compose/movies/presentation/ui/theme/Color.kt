@@ -12,3 +12,5 @@ val darkGrey = Color(0xFF121212)
 
 //Light colors
 val lightGray = Color(0xFFCCCCCC)
+val smokeWithe = Color(0xFFf5f5f5)
+val grassGreen = Color(0xFF7CFC00)

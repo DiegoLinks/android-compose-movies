@@ -11,16 +11,20 @@ private val DarkColorPalette = darkColorScheme(
     primary = Purple200,
     onPrimary = Purple700,
     secondary = Teal200,
-    background = darkGrey,
-    onBackground = lightGray
+    background = Color.Black,
+    onBackground = lightGray,
+    onSecondaryContainer = lightGray,
+    onTertiaryContainer = lightGray
 )
 
 private val LightColorPalette = lightColorScheme(
     primary = Purple500,
     onPrimary = Purple700,
     secondary = Teal200,
-    background = Color.White,
-    onBackground = darkGrey
+    background = darkGrey,
+    onBackground = smokeWithe,
+    onSecondaryContainer = grassGreen,
+    onTertiaryContainer = lightGray
 )
 
 @Composable
