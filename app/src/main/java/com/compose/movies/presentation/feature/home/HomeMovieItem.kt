@@ -1,6 +1,7 @@
 package com.compose.movies.presentation.feature.home
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -25,10 +26,14 @@ import com.compose.movies.presentation.ui.theme.MyMoviesTheme
 import com.compose.movies.presentation.utils.Dimens.fontXLarge
 import com.compose.movies.presentation.utils.Dimens.spacingMedium
 import com.compose.movies.presentation.utils.MovieUtils.getMainMovieGender
+import com.compose.movies.presentation.utils.MovieUtils.ratingTextColor
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun MovieItem(movie: MovieUI, navController: NavHostController) {
+
+    val ratingTexColor =
+        if (isSystemInDarkTheme()) MaterialTheme.colorScheme.onBackground else ratingTextColor(movie.voteAverage)
 
     val context = LocalContext.current
 
@@ -59,7 +64,7 @@ fun MovieItem(movie: MovieUI, navController: NavHostController) {
 
         Text(
             text = getMainMovieGender(movie.mainGenre, context),
-            color = MaterialTheme.colorScheme.onTertiaryContainer
+            color = MaterialTheme.colorScheme.onSecondaryContainer
         )
 
         Text(
@@ -69,7 +74,7 @@ fun MovieItem(movie: MovieUI, navController: NavHostController) {
 
         Text(
             text = stringResource(R.string.rating_label, movie.voteAverage),
-            color = MaterialTheme.colorScheme.onSecondaryContainer
+            color = ratingTexColor
         )
     }
 }

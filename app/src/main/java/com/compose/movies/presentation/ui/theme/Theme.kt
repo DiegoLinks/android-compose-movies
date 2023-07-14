@@ -13,8 +13,7 @@ private val DarkColorPalette = darkColorScheme(
     secondary = Teal200,
     background = Color.Black,
     onBackground = lightGray,
-    onSecondaryContainer = lightGray,
-    onTertiaryContainer = lightGray
+    onSecondaryContainer = lightGray
 )
 
 private val LightColorPalette = lightColorScheme(
@@ -23,8 +22,7 @@ private val LightColorPalette = lightColorScheme(
     secondary = Teal200,
     background = darkGrey,
     onBackground = smokeWithe,
-    onSecondaryContainer = grassGreen,
-    onTertiaryContainer = lightGray
+    onSecondaryContainer = lightGray
 )
 
 @Composable

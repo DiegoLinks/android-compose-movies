@@ -1,7 +1,12 @@
 package com.compose.movies.presentation.utils
 
 import android.content.Context
+import androidx.compose.ui.graphics.Color
 import com.compose.movies.R
+import com.compose.movies.presentation.ui.theme.grassGreen
+import com.compose.movies.presentation.ui.theme.orange
+import com.compose.movies.presentation.ui.theme.lemonYellow
+import com.compose.movies.presentation.ui.theme.ueRed
 
 object MovieUtils {
     fun getReleaseYear(releaseDate: String?): String {
@@ -37,5 +42,17 @@ object MovieUtils {
         }
 
         return mainGenre
+    }
+
+    fun ratingTextColor(voteAverage: Double): Color {
+        return if (voteAverage > 7.5) {
+            grassGreen
+        } else if (voteAverage > 5.0) {
+            lemonYellow
+        } else if (voteAverage > 2.5) {
+            orange
+        } else {
+            ueRed
+        }
     }
 }
