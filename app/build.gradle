@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace 'com.compose.movies'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.compose.movies"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -56,6 +56,8 @@ dependencies {
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
     implementation 'androidx.compose.material3:material3:1.1.1'
     testImplementation 'junit:junit:4.13.2'
+    testImplementation 'io.mockk:mockk:1.13.5'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
@@ -83,8 +85,9 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     //Compose LiveData
-    implementation 'androidx.compose.runtime:runtime-livedata:1.5.0-beta02'
+    implementation 'androidx.compose.runtime:runtime-livedata:1.6.0-alpha01'
 
+    //Moshi
     implementation "com.squareup.moshi:moshi:$moshi_version"
     implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
 }
