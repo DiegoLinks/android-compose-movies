@@ -4,7 +4,7 @@ import com.compose.movies.data.model.MovieResponse
 import com.compose.movies.domain.model.Country
 import com.compose.movies.domain.model.Movie
 
-val mockedApiKey = "YOUR_API_KEY"
+const val mockedApiKey = "YOUR_API_KEY"
 
 val movieResponse1 = MovieResponse(
     adult = false,
