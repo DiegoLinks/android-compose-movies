@@ -1,7 +1,7 @@
 package com.compose.movies.presentation.feature.detail
 
 import androidx.compose.runtime.Composable
-import com.compose.movies.data.repository.getMovieById
+import com.compose.movies.domain.repository.getMovieById
 
 @Composable
 fun MovieDetailRoute(movieId: Int) {
@@ -10,6 +10,6 @@ fun MovieDetailRoute(movieId: Int) {
     if (movie == null) {
         //todo exception scenario
     } else {
-        MovieDetail(movie)
+        MovieDetailScreen(movie)
     }
 }
