@@ -10,8 +10,6 @@ import com.compose.movies.domain.model.Movie
 import com.compose.movies.data.util.Message.Companion.GENERIC_ERROR_MESSAGE
 import com.compose.movies.data.util.Message.Companion.NO_INTERNET_MESSAGE
 import com.compose.movies.domain.model.Country
-import com.compose.movies.presentation.utils.ImageUtils
-import com.compose.movies.presentation.utils.MovieUtils
 import java.io.IOException
 import java.net.UnknownHostException
 import javax.inject.Inject
@@ -30,7 +28,7 @@ class MovieRepositoryImpl @Inject constructor(
         }
     }
 
-    fun MovieResponse.toMovie(): Movie {
+    private fun MovieResponse.toMovie(): Movie {
         return Movie(
             id = id,
             title = title,
